@@ -1,1 +1,1 @@
-Sitemap: https://seb.mamessier.com/sitemap.xml
+Sitemap: http://seb.mamessier.com/sitemap.xml
