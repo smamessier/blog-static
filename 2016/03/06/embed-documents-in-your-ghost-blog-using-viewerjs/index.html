@@ -15,22 +15,22 @@
 <meta property="og:locale" content="en_GB">
 <meta name="description" content="Introduction Whether you are using Ghost as a blogging platform or to host your CV and research projects, it could come handy to embed documents such as PDF presentations or spreadsheets in a post. Embedding documents will ensure that your readers don’t have to download anything which will make their experience smoother. ViewerJS ViewerJs is a javascript library making it easy to embed self-hosted documents in pages of your website. It uses Mozilla’s well know PDF.js and KO’s WebODF under the hood. A ViewerJS plug-in is available for Wordpress but no such thing seems to exist to ease integration for Ghost bloggers. Ghost and files Ghost doesn’t host documents for you as it does with post images. So we will have to setup our own simple file server. We will achieve this using the famous Express module for NodeJS. #####Setting up a minimalistic file server First your will need to download ViewerJS from their GetIt page. From a Linux-based server, you can use the command line: wget http://viewerjs.org/releases/ViewerJS-latest.zip unzip ViewerJS-latest.zip -d ViewerJS Create a folder somewhere in your server and, and copy the ViewerJS folder inside. mkdir docServer cp -R ~/Downloads/ViewerJS/viewerjs-0.5.8/ViewerJS ./docServer/ cd docServer Now that we are in docServer we can install the NodeJS module Express which will serve the ViewerJS library and the embedded documents. npm install express Finally we create a server.js file in which we put the minimalistic server code. (We picked 2375 but you can use any available port you want - preferably above 1024 so that you don’t need sudo privileges to run it). var express = require('express'); var app = express(); app.use('/ViewerJS', express.static(__dirname + '/ViewerJS')); app.use('/docs', express.static(__dirname + '/data')); var server = app.listen(2375); Let’s now launch the server (We assume that you use PM2 to run Ghost on your production server - if not you should seriously think about it-.) pm2 start server.js --name docServer Even better on port 80 We assume that you have a Ghost blog proxied through a web server such as Nginx or Apache and that you have a certain level of privileges allowing to modify virtual host configuration files. Apache Modify your existing Ghost virtualhost to make it look like that: &lt;VirtualHost *:80&gt; ServerName yourghostblog.com ProxyPreserveHost on ProxyPass /docs/ http://localhost:2375/docs/ ProxyPass /ViewerJS/ http://localhost:2375/ViewerJS/ ProxyPass / http://localhost:2368/ &lt;/VirtualHost&gt; Nginx ToDo Synchronizing files It is quite annoying to upload documents through ssh. To reduce the pain,you can use Rsync (On Mac and Linux) to synchronize you documents between you local environment and the server host the Ghost blog. ##Conclusion Here we go, you can now include embedded documents using ViewerJS instructions, i.e in a Ghost blog post, just use the following HTML &lt;iframe src = &quot;/ViewerJS/#/docs/path/to/your/doc.pdf&quot; width='100%' height='600' allowfullscreen webkitallowfullscreen&gt;&lt;/iframe&gt; It appears you don't have a PDF plugin for this browser. No biggie... you can click here to download the PDF file.">
 <meta property="og:description" content="Introduction Whether you are using Ghost as a blogging platform or to host your CV and research projects, it could come handy to embed documents such as PDF presentations or spreadsheets in a post. Embedding documents will ensure that your readers don’t have to download anything which will make their experience smoother. ViewerJS ViewerJs is a javascript library making it easy to embed self-hosted documents in pages of your website. It uses Mozilla’s well know PDF.js and KO’s WebODF under the hood. A ViewerJS plug-in is available for Wordpress but no such thing seems to exist to ease integration for Ghost bloggers. Ghost and files Ghost doesn’t host documents for you as it does with post images. So we will have to setup our own simple file server. We will achieve this using the famous Express module for NodeJS. #####Setting up a minimalistic file server First your will need to download ViewerJS from their GetIt page. From a Linux-based server, you can use the command line: wget http://viewerjs.org/releases/ViewerJS-latest.zip unzip ViewerJS-latest.zip -d ViewerJS Create a folder somewhere in your server and, and copy the ViewerJS folder inside. mkdir docServer cp -R ~/Downloads/ViewerJS/viewerjs-0.5.8/ViewerJS ./docServer/ cd docServer Now that we are in docServer we can install the NodeJS module Express which will serve the ViewerJS library and the embedded documents. npm install express Finally we create a server.js file in which we put the minimalistic server code. (We picked 2375 but you can use any available port you want - preferably above 1024 so that you don’t need sudo privileges to run it). var express = require('express'); var app = express(); app.use('/ViewerJS', express.static(__dirname + '/ViewerJS')); app.use('/docs', express.static(__dirname + '/data')); var server = app.listen(2375); Let’s now launch the server (We assume that you use PM2 to run Ghost on your production server - if not you should seriously think about it-.) pm2 start server.js --name docServer Even better on port 80 We assume that you have a Ghost blog proxied through a web server such as Nginx or Apache and that you have a certain level of privileges allowing to modify virtual host configuration files. Apache Modify your existing Ghost virtualhost to make it look like that: &lt;VirtualHost *:80&gt; ServerName yourghostblog.com ProxyPreserveHost on ProxyPass /docs/ http://localhost:2375/docs/ ProxyPass /ViewerJS/ http://localhost:2375/ViewerJS/ ProxyPass / http://localhost:2368/ &lt;/VirtualHost&gt; Nginx ToDo Synchronizing files It is quite annoying to upload documents through ssh. To reduce the pain,you can use Rsync (On Mac and Linux) to synchronize you documents between you local environment and the server host the Ghost blog. ##Conclusion Here we go, you can now include embedded documents using ViewerJS instructions, i.e in a Ghost blog post, just use the following HTML &lt;iframe src = &quot;/ViewerJS/#/docs/path/to/your/doc.pdf&quot; width='100%' height='600' allowfullscreen webkitallowfullscreen&gt;&lt;/iframe&gt; It appears you don't have a PDF plugin for this browser. No biggie... you can click here to download the PDF file.">
-<link rel="canonical" href="https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/">
-<meta property="og:url" content="https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/">
+<link rel="canonical" href="http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/">
+<meta property="og:url" content="http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/">
 <meta property="og:site_name" content="Alembic">
-<meta property="og:image" content="https://smamessier.github.io/blog-static/blog2/assets/default-social-image.png">
+<meta property="og:image" content="http://localhost:4000/assets/default-social-image.png">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2016-03-06T23:25:09-05:00">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@smamessier# jekyll-seo-tag &gt; Owners twitter username">
 <meta name="twitter:creator" content="@Sebastien Mamessier">
 <script type="application/ld+json">
-{"name":null,"description":"Introduction Whether you are using Ghost as a blogging platform or to host your CV and research projects, it could come handy to embed documents such as PDF presentations or spreadsheets in a post. Embedding documents will ensure that your readers don’t have to download anything which will make their experience smoother. ViewerJS ViewerJs is a javascript library making it easy to embed self-hosted documents in pages of your website. It uses Mozilla’s well know PDF.js and KO’s WebODF under the hood. A ViewerJS plug-in is available for Wordpress but no such thing seems to exist to ease integration for Ghost bloggers. Ghost and files Ghost doesn’t host documents for you as it does with post images. So we will have to setup our own simple file server. We will achieve this using the famous Express module for NodeJS. #####Setting up a minimalistic file server First your will need to download ViewerJS from their GetIt page. From a Linux-based server, you can use the command line: wget http://viewerjs.org/releases/ViewerJS-latest.zip unzip ViewerJS-latest.zip -d ViewerJS Create a folder somewhere in your server and, and copy the ViewerJS folder inside. mkdir docServer cp -R ~/Downloads/ViewerJS/viewerjs-0.5.8/ViewerJS ./docServer/ cd docServer Now that we are in docServer we can install the NodeJS module Express which will serve the ViewerJS library and the embedded documents. npm install express Finally we create a server.js file in which we put the minimalistic server code. (We picked 2375 but you can use any available port you want - preferably above 1024 so that you don’t need sudo privileges to run it). var express = require(&#39;express&#39;); var app = express(); app.use(&#39;/ViewerJS&#39;, express.static(__dirname + &#39;/ViewerJS&#39;)); app.use(&#39;/docs&#39;, express.static(__dirname + &#39;/data&#39;)); var server = app.listen(2375); Let’s now launch the server (We assume that you use PM2 to run Ghost on your production server - if not you should seriously think about it-.) pm2 start server.js --name docServer Even better on port 80 We assume that you have a Ghost blog proxied through a web server such as Nginx or Apache and that you have a certain level of privileges allowing to modify virtual host configuration files. Apache Modify your existing Ghost virtualhost to make it look like that: &lt;VirtualHost *:80&gt; ServerName yourghostblog.com ProxyPreserveHost on ProxyPass /docs/ http://localhost:2375/docs/ ProxyPass /ViewerJS/ http://localhost:2375/ViewerJS/ ProxyPass / http://localhost:2368/ &lt;/VirtualHost&gt; Nginx ToDo Synchronizing files It is quite annoying to upload documents through ssh. To reduce the pain,you can use Rsync (On Mac and Linux) to synchronize you documents between you local environment and the server host the Ghost blog. ##Conclusion Here we go, you can now include embedded documents using ViewerJS instructions, i.e in a Ghost blog post, just use the following HTML &lt;iframe src = &quot;/ViewerJS/#/docs/path/to/your/doc.pdf&quot; width=&#39;100%&#39; height=&#39;600&#39; allowfullscreen webkitallowfullscreen&gt;&lt;/iframe&gt; It appears you don&#39;t have a PDF plugin for this browser. No biggie... you can click here to download the PDF file.","author":{"@type":"Person","name":"Sebastien Mamessier"},"@type":"BlogPosting","url":"https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://smamessier.github.io/blog-static/blog2/assets/logo.svg"},"name":"Sebastien Mamessier"},"image":"https://smamessier.github.io/blog-static/blog2/assets/default-social-image.png","headline":"Embed documents in your Ghost blog using ViewerJS and Express","dateModified":"2016-03-06T23:25:09-05:00","datePublished":"2016-03-06T23:25:09-05:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/"},"@context":"http://schema.org"}</script>
+{"name":null,"description":"Introduction Whether you are using Ghost as a blogging platform or to host your CV and research projects, it could come handy to embed documents such as PDF presentations or spreadsheets in a post. Embedding documents will ensure that your readers don’t have to download anything which will make their experience smoother. ViewerJS ViewerJs is a javascript library making it easy to embed self-hosted documents in pages of your website. It uses Mozilla’s well know PDF.js and KO’s WebODF under the hood. A ViewerJS plug-in is available for Wordpress but no such thing seems to exist to ease integration for Ghost bloggers. Ghost and files Ghost doesn’t host documents for you as it does with post images. So we will have to setup our own simple file server. We will achieve this using the famous Express module for NodeJS. #####Setting up a minimalistic file server First your will need to download ViewerJS from their GetIt page. From a Linux-based server, you can use the command line: wget http://viewerjs.org/releases/ViewerJS-latest.zip unzip ViewerJS-latest.zip -d ViewerJS Create a folder somewhere in your server and, and copy the ViewerJS folder inside. mkdir docServer cp -R ~/Downloads/ViewerJS/viewerjs-0.5.8/ViewerJS ./docServer/ cd docServer Now that we are in docServer we can install the NodeJS module Express which will serve the ViewerJS library and the embedded documents. npm install express Finally we create a server.js file in which we put the minimalistic server code. (We picked 2375 but you can use any available port you want - preferably above 1024 so that you don’t need sudo privileges to run it). var express = require(&#39;express&#39;); var app = express(); app.use(&#39;/ViewerJS&#39;, express.static(__dirname + &#39;/ViewerJS&#39;)); app.use(&#39;/docs&#39;, express.static(__dirname + &#39;/data&#39;)); var server = app.listen(2375); Let’s now launch the server (We assume that you use PM2 to run Ghost on your production server - if not you should seriously think about it-.) pm2 start server.js --name docServer Even better on port 80 We assume that you have a Ghost blog proxied through a web server such as Nginx or Apache and that you have a certain level of privileges allowing to modify virtual host configuration files. Apache Modify your existing Ghost virtualhost to make it look like that: &lt;VirtualHost *:80&gt; ServerName yourghostblog.com ProxyPreserveHost on ProxyPass /docs/ http://localhost:2375/docs/ ProxyPass /ViewerJS/ http://localhost:2375/ViewerJS/ ProxyPass / http://localhost:2368/ &lt;/VirtualHost&gt; Nginx ToDo Synchronizing files It is quite annoying to upload documents through ssh. To reduce the pain,you can use Rsync (On Mac and Linux) to synchronize you documents between you local environment and the server host the Ghost blog. ##Conclusion Here we go, you can now include embedded documents using ViewerJS instructions, i.e in a Ghost blog post, just use the following HTML &lt;iframe src = &quot;/ViewerJS/#/docs/path/to/your/doc.pdf&quot; width=&#39;100%&#39; height=&#39;600&#39; allowfullscreen webkitallowfullscreen&gt;&lt;/iframe&gt; It appears you don&#39;t have a PDF plugin for this browser. No biggie... you can click here to download the PDF file.","author":{"@type":"Person","name":"Sebastien Mamessier"},"@type":"BlogPosting","url":"http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logo.svg"},"name":"Sebastien Mamessier"},"image":"http://localhost:4000/assets/default-social-image.png","headline":"Embed documents in your Ghost blog using ViewerJS and Express","dateModified":"2016-03-06T23:25:09-05:00","datePublished":"2016-03-06T23:25:09-05:00","sameAs":null,"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		
 
-    <link rel="stylesheet" href="/blog2/assets/styles.css">
+    <link rel="stylesheet" href="/assets/styles.css">
 
 		<link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=16" sizes="16x16">
 <link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=32" sizes="32x32">
@@ -68,8 +68,8 @@
 
 		<header class="header">
   <div class="container">
-    <a class="logo" href="/blog2/">
-  <img src="/blog2/assets/logo.svg" alt="Alembic logo">
+    <a class="logo" href="/">
+  <img src="/assets/logo.svg" alt="Alembic logo">
 </a>
 
 
@@ -85,35 +85,35 @@
       
 
       <li class="item  item--nav">
-        <a href="/blog2/">Home</a>
+        <a href="/">Home</a>
       </li>
     
 
       
 
       <li class="item  item--nav">
-        <a href="/blog2/elements/">Elements</a>
+        <a href="/elements/">Elements</a>
       </li>
     
 
       
 
       <li class="item  item--nav">
-        <a href="/blog2/blog/">Blog</a>
+        <a href="/blog/">Blog</a>
       </li>
     
 
       
 
       <li class="item  item--nav">
-        <a href="/blog2/categories/">Categories</a>
+        <a href="/categories/">Categories</a>
       </li>
     
 
       
 
       <li class="item  item--nav">
-        <a href="/blog2/search/">Search</a>
+        <a href="/search/">Search</a>
       </li>
     
 
@@ -265,7 +265,7 @@ Here we go, you can now include embedded documents using ViewerJS instructions, 
 
     
 
-    <a class="button" href="https://twitter.com/intent/tweet/?url=https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/&amp;text=Embed%20documents%20in%20your%20Ghost%20blog%20using%20ViewerJS%20and%20Express&amp;via=smamessier#%20jekyll-seo-tag%20&gt;%20Owners%20twitter%20username%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20" style="background: #1DA1F2">Twitter  <svg class="icon  icon--twitter" role="img"><use xlink:href="#twitter"></use></svg>
+    <a class="button" href="https://twitter.com/intent/tweet/?url=http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/&amp;text=Embed%20documents%20in%20your%20Ghost%20blog%20using%20ViewerJS%20and%20Express&amp;via=smamessier#%20jekyll-seo-tag%20&gt;%20Owners%20twitter%20username%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20" style="background: #1DA1F2">Twitter  <svg class="icon  icon--twitter" role="img"><use xlink:href="#twitter"></use></svg>
 </a>
 
   
@@ -276,7 +276,7 @@ Here we go, you can now include embedded documents using ViewerJS instructions, 
 
     
 
-    <a class="button" href="https://facebook.com/sharer/sharer.php?u=https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20" style="background: #3B5998">facebook  <svg class="icon  icon--facebook" role="img"><use xlink:href="#facebook"></use></svg>
+    <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20" style="background: #3B5998">facebook  <svg class="icon  icon--facebook" role="img"><use xlink:href="#facebook"></use></svg>
 </a>
 
   
@@ -287,7 +287,7 @@ Here we go, you can now include embedded documents using ViewerJS instructions, 
 
     
 
-    <a class="button" href="https://plus.google.com/share?url=https://smamessier.github.io/blog-static/blog2/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20" style="background: #DC4E41">Google+  <svg class="icon  icon--google+" role="img"><use xlink:href="#google+"></use></svg>
+    <a class="button" href="https://plus.google.com/share?url=http://localhost:4000/2016/03/06/embed-documents-in-your-ghost-blog-using-viewerjs/%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20%20%20%0A%20%20%20%20" style="background: #DC4E41">Google+  <svg class="icon  icon--google+" role="img"><use xlink:href="#google+"></use></svg>
 </a>
 
   
