@@ -7,21 +7,21 @@
     
       {
         "title": "Soccer",
-        "excerpt": "I’ve been playing soccer since childhood, first at a competitive level and then in the Supaero varsity team. Later on, I played for the Airbus corporate team in Munich and I’m now enjoying joining pick-ups at Georgia Tech on Friday nights.\n\nThere are two main reasons why I just love soccer - and this can apply to many other team sports - firstly it teaches you how to be a good teammate, i.e work hard for the team, forget about your personal objectives and serve a higher goal. Arriving in a new team is always an interesting challenge, you first have to find your place in the existing schema, express and adapt your skills to complement the other players. The half-time discussion is also a very good exercise as you only have a couple of minutes to find a solution based on everyone’s remarks and your own analysis of the game.\n\nSecondly it involves and trains your physical, psychological and cognitive abilities in a unique way, at different levels, engaging together raw reflexes, motion planning and tactical thinking in conscious and unconscious ways.\n\n\n",
+        "excerpt": "Football (Soccer for US readers) has always been a big part of my life and I can’t survive a week without touching the ball.\n",
         "content": "I’ve been playing soccer since childhood, first at a competitive level and then in the Supaero varsity team. Later on, I played for the Airbus corporate team in Munich and I’m now enjoying joining pick-ups at Georgia Tech on Friday nights. There are two main reasons why I just love soccer - and this can apply to many other team sports - firstly it teaches you how to be a good teammate, i.e work hard for the team, forget about your personal objectives and serve a higher goal. Arriving in a new team is always an interesting challenge, you first have to find your place in the existing schema, express and adapt your skills to complement the other players. The half-time discussion is also a very good exercise as you only have a couple of minutes to find a solution based on everyone’s remarks and your own analysis of the game. Secondly it involves and trains your physical, psychological and cognitive abilities in a unique way, at different levels, engaging together raw reflexes, motion planning and tactical thinking in conscious and unconscious ways. ",
-        "url": "/2009/05/26/out-of-the-lab/"
+        "url": "/2009/05/26/soccer/"
       },
     
       {
         "title": "Astronomy",
-        "excerpt": "I enjoy practicing astronomy and astro-photography. I see it as a way to experience the communion of science and nature, directly with my own eyes or through mirrors and lenses.\nAstro photography is a slightly more demanding hobby as it requires good tracking and image processing capabilities.\nA good hike if often required to find a good observation spot which is also part of the fun.\n\nI used Astronomy at higher scientific level twice, once for an exoplanet detection project about which I started writing a blog post and the next year as a research project at Supaero to detect asteroids crashing on the Moon.\n\n\n\n\n",
+        "excerpt": "A summary of my practice of astronomy and astrophotography\n",
         "content": "I enjoy practicing astronomy and astro-photography. I see it as a way to experience the communion of science and nature, directly with my own eyes or through mirrors and lenses. Astro photography is a slightly more demanding hobby as it requires good tracking and image processing capabilities. A good hike if often required to find a good observation spot which is also part of the fun. I used Astronomy at higher scientific level twice, once for an exoplanet detection project about which I started writing a blog post and the next year as a research project at Supaero to detect asteroids crashing on the Moon.  ",
         "url": "/2009/05/26/astronomy/"
       },
     
       {
         "title": "Piloting",
-        "excerpt": "I got my Private Pilot License in 2013 and was mostly flying in the South of France. I took my flight lessons at the Supaero-ISAE flight school in Lasbordes (near Toulouse).\n\n\n\n\n\n\n\n",
+        "excerpt": "Where I describe my short experience as a private pilot\n",
         "content": "I got my Private Pilot License in 2013 and was mostly flying in the South of France. I took my flight lessons at the Supaero-ISAE flight school in Lasbordes (near Toulouse).  ",
         "url": "/2009/05/26/piloting/"
       },
@@ -70,14 +70,14 @@
     
       {
         "title": "Situation Awareness in Rapidly Changing Environments",
-        "excerpt": "This project aims to answer some general questions about the evolution of mental representations of systems and their environment using statistical methods. We used mini-games to design a human experiment and evaluate hypotheses about the evolution of mental models and the impact of workload on situation awareness. The statistical analysis proved several significant interactions between workload and situation awareness and meaningful insight regarding the alteration of mental models. We believe this work can provide a solid experimental basis to support the development of more realistic human agent models.\n\n\n",
+        "excerpt": "A quick human-in-the-loop experiment about mental models and situation awareness.\n",
         "content": "This project aims to answer some general questions about the evolution of mental representations of systems and their environment using statistical methods. We used mini-games to design a human experiment and evaluate hypotheses about the evolution of mental models and the impact of workload on situation awareness. The statistical analysis proved several significant interactions between workload and situation awareness and meaningful insight regarding the alteration of mental models. We believe this work can provide a solid experimental basis to support the development of more realistic human agent models. ",
         "url": "/2012/05/25/sa-mental-models/"
       },
     
       {
         "title": "Biologically Inspired Object Recognition",
-        "excerpt": "Project description: Coming soon\n\n\n",
+        "excerpt": "Back in 2013, when I ventured in the Computational Neuroscience class surrounded by BMED students ;)\n",
         "content": "Project description: Coming soon ",
         "url": "/2013/01/25/biologically-inspired-object-recognition/"
       },
@@ -98,14 +98,14 @@
     
       {
         "title": "Proving LQG controller global optimality",
-        "excerpt": "Description: Coming soon..\n\n\n",
+        "excerpt": "When your robust control professor asks you to debunk LQG optimality proofs…\n",
         "content": "Description: Coming soon.. ",
         "url": "/2013/05/25/lqg-global-optimality/"
       },
     
       {
         "title": "Optimal dynamic soaring trajectories for a glider",
-        "excerpt": "Description: Coming soon\n\n\n",
+        "excerpt": "An optimal control project about optimal soaring trajectories.\n",
         "content": "Description: Coming soon ",
         "url": "/2013/05/25/optimal-soaring-glider/"
       },

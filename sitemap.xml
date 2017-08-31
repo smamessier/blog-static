@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://seb.mamessier.com/2009/05/26/out-of-the-lab/</loc>
+<loc>http://seb.mamessier.com/2009/05/26/soccer/</loc>
 <lastmod>2009-05-26T01:01:00-05:00</lastmod>
 </url>
 <url>
@@ -145,6 +145,9 @@
 </url>
 <url>
 <loc>http://seb.mamessier.com/tag/projects-other/</loc>
+</url>
+<url>
+<loc>http://seb.mamessier.com/tag/cognitive-science/</loc>
 </url>
 <url>
 <loc>http://seb.mamessier.com/tag/controls/</loc>
