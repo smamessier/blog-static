@@ -15,27 +15,27 @@
 <meta property="og:locale" content="en_GB" />
 <meta name="description" content="Computing collision-free paths for multi-robot environments is a fundamental issue in the world of robotic path planning. Rapidly exploring Random Trees (RRTs) have been proven to be a very powerful method to design quick and efficient single-query path planners. Unfortunately, RRTs struggle with multi-robot worlds due to the explosion of the degrees of freedom and the increase in complexity for collision avoidance between moving agents in close proximity. In this project,we present a method that revolves around the idea of collaborative RRT (cRRT) search that shares information between all the robots in the environment. Planning by combining all the robots into a single high-dimensional RRT many times is unable to compute a collision-free path in a reasonable amount of time or tree nodes. Our method however, takes advantage of the power of RRTs on lower dimensional configurations and collaborates searches between all robots in order to compute collision- free paths for all. Full-report below:" />
 <meta property="og:description" content="Computing collision-free paths for multi-robot environments is a fundamental issue in the world of robotic path planning. Rapidly exploring Random Trees (RRTs) have been proven to be a very powerful method to design quick and efficient single-query path planners. Unfortunately, RRTs struggle with multi-robot worlds due to the explosion of the degrees of freedom and the increase in complexity for collision avoidance between moving agents in close proximity. In this project,we present a method that revolves around the idea of collaborative RRT (cRRT) search that shares information between all the robots in the environment. Planning by combining all the robots into a single high-dimensional RRT many times is unable to compute a collision-free path in a reasonable amount of time or tree nodes. Our method however, takes advantage of the power of RRTs on lower dimensional configurations and collaborates searches between all robots in order to compute collision- free paths for all. Full-report below:" />
-<link rel="canonical" href="http://localhost:4000/2013/05/20/collaborative-rtt-based-motion-planning/" />
-<meta property="og:url" content="http://localhost:4000/2013/05/20/collaborative-rtt-based-motion-planning/" />
+<link rel="canonical" href="https://seb.mamessier.com/2013/05/20/collaborative-rtt-based-motion-planning/" />
+<meta property="og:url" content="https://seb.mamessier.com/2013/05/20/collaborative-rtt-based-motion-planning/" />
 <meta property="og:site_name" content="Sebastien Mamessier" />
-<meta property="og:image" content="http://localhost:4000/assets/default-social-image.png" />
+<meta property="og:image" content="https://seb.mamessier.com/assets/default-social-image.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2013-05-20T20:50:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@smamessier# jekyll-seo-tag > Owners twitter username" />
 <meta name="twitter:creator" content="@Sebastien Mamessier" />
 <script type="application/ld+json">
-{"description":"Computing collision-free paths for multi-robot environments is a fundamental issue in the world of robotic path planning. Rapidly exploring Random Trees (RRTs) have been proven to be a very powerful method to design quick and efficient single-query path planners. Unfortunately, RRTs struggle with multi-robot worlds due to the explosion of the degrees of freedom and the increase in complexity for collision avoidance between moving agents in close proximity. In this project,we present a method that revolves around the idea of collaborative RRT (cRRT) search that shares information between all the robots in the environment. Planning by combining all the robots into a single high-dimensional RRT many times is unable to compute a collision-free path in a reasonable amount of time or tree nodes. Our method however, takes advantage of the power of RRTs on lower dimensional configurations and collaborates searches between all robots in order to compute collision- free paths for all. Full-report below:","author":{"@type":"Person","name":"Sebastien Mamessier"},"@type":"BlogPosting","url":"http://localhost:4000/2013/05/20/collaborative-rtt-based-motion-planning/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c"},"name":"Sebastien Mamessier"},"image":"http://localhost:4000/assets/default-social-image.png","headline":"Collaborative RRT-based motion planning","dateModified":"2013-05-20T20:50:00-05:00","datePublished":"2013-05-20T20:50:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/05/20/collaborative-rtt-based-motion-planning/"},"@context":"http://schema.org"}</script>
+{"description":"Computing collision-free paths for multi-robot environments is a fundamental issue in the world of robotic path planning. Rapidly exploring Random Trees (RRTs) have been proven to be a very powerful method to design quick and efficient single-query path planners. Unfortunately, RRTs struggle with multi-robot worlds due to the explosion of the degrees of freedom and the increase in complexity for collision avoidance between moving agents in close proximity. In this project,we present a method that revolves around the idea of collaborative RRT (cRRT) search that shares information between all the robots in the environment. Planning by combining all the robots into a single high-dimensional RRT many times is unable to compute a collision-free path in a reasonable amount of time or tree nodes. Our method however, takes advantage of the power of RRTs on lower dimensional configurations and collaborates searches between all robots in order to compute collision- free paths for all. Full-report below:","author":{"@type":"Person","name":"Sebastien Mamessier"},"@type":"BlogPosting","url":"https://seb.mamessier.com/2013/05/20/collaborative-rtt-based-motion-planning/","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c"},"name":"Sebastien Mamessier"},"image":"https://seb.mamessier.com/assets/default-social-image.png","headline":"Collaborative RRT-based motion planning","dateModified":"2013-05-20T20:50:00-05:00","datePublished":"2013-05-20T20:50:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://seb.mamessier.com/2013/05/20/collaborative-rtt-based-motion-planning/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 		
 
     <link rel="stylesheet" href="/assets/styles.css">
 
-		<link rel="icon" type="image/png" href="http://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c?s=16" sizes="16x16">
-<link rel="icon" type="image/png" href="http://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c?s=32" sizes="32x32">
-<link rel="icon" type="image/png" href="http://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c?s=96" sizes="96x96">
-<link rel="shortcut icon" href="http://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c">
+		<link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c?s=16" sizes="16x16">
+<link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c?s=32" sizes="32x32">
+<link rel="icon" type="image/png" href="https://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c?s=96" sizes="96x96">
+<link rel="shortcut icon" href="https://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c">
 
 	</head>
 	<body class="layout-post  collaborative-rrt-based-motion-planning">
@@ -69,7 +69,7 @@
 		<header class="header">
   <div class="container">
     <a class="logo" href="/">
-  <img src="http://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c" alt="Sebastien Mamessier logo"/>
+  <img src="https://www.gravatar.com/avatar/edfba33c46c3f3e47ee9f6f35894ef2c" alt="Sebastien Mamessier logo"/>
 </a>
 
 
@@ -177,7 +177,7 @@ applyToggle('.list--nav', '.button', 640)
       
       
       
-      https://www.linkedin.com/shareArticle?url=http://localhost:4000/2013/05/20/collaborative-rtt-based-motion-planning/&title=Collaborative RRT-based motion planning&source=Sebastien Mamessier&mini=true
+      https://www.linkedin.com/shareArticle?url=https://seb.mamessier.com/2013/05/20/collaborative-rtt-based-motion-planning/&title=Collaborative RRT-based motion planning&source=Sebastien Mamessier&mini=true
       
       
       
@@ -213,7 +213,7 @@ applyToggle('.list--nav', '.button', 640)
       
 
       <li class="item  item--nav">
-        <a href="http://seb.mamessier.com">Created by Sebastien Mamessier</a>
+        <a href="https://seb.mamessier.com">Created by Sebastien Mamessier</a>
       </li>
     
   </ul>
